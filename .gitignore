@@ -8,3 +8,6 @@
 /SimpleDataGenerator.Tests.Core/obj/Debug
 /packages
 /SimpleDataGenerator/obj/Debug
+
+/.nuget
+/SimpleDataGenerator.sln.DotSettings.user

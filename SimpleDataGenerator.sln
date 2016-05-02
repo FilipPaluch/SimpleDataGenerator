@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8DD175
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{9FBF2746-F1BC-45F9-B286-55C04E06A657}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7BC9F04-81C2-41EA-A05C-8C10BB7B4979} = {9FBF2746-F1BC-45F9-B286-55C04E06A657}
+		{69BF5A3A-BEBD-4F63-BDB1-70717AD38AE9} = {9FBF2746-F1BC-45F9-B286-55C04E06A657}
 	EndGlobalSection
 EndGlobal
