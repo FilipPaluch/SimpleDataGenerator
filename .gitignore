@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SimpleDataGenerator.Core/bin/Debug
+/SimpleDataGenerator.Core/obj/Debug
+/SimpleDataGenerator.Tests.Core/bin/Debug
+/SimpleDataGenerator.Tests.Core/obj/Debug
+/packages
+/SimpleDataGenerator/obj/Debug
