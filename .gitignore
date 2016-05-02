@@ -1,29 +1,10 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/SimpleDataGenerator.Core/bin/Debug
-/SimpleDataGenerator.Core/obj/Debug
-/SimpleDataGenerator.Tests.Core/bin/Debug
-/SimpleDataGenerator.Tests.Core/obj/Debug
-/packages
-/SimpleDataGenerator/obj/Debug
-
-/.nuget
-/SimpleDataGenerator.sln.DotSettings.user
-
 /Source/.nuget
-/Source/SimpleDataGenerator/.nuget
 
-/Source/SimpleDataGenerator/bin
-
-/Source/SimpleDataGenerator/obj
+/Source/packages
 
 /Source/SimpleDataGenerator.Core/bin
-/Source/SimpleDataGenerator.Core/obj
 
+/Source/SimpleDataGenerator.Core/obj
 /Source/SimpleDataGenerator.Tests.Core/bin
 
 /Source/SimpleDataGenerator.Tests.Core/obj
-/Source/packages
-/Source
