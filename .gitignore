@@ -11,3 +11,17 @@
 
 /.nuget
 /SimpleDataGenerator.sln.DotSettings.user
+
+/Source/.nuget
+/Source/SimpleDataGenerator/.nuget
+
+/Source/SimpleDataGenerator/bin
+
+/Source/SimpleDataGenerator/obj
+
+/Source/SimpleDataGenerator.Core/bin
+/Source/SimpleDataGenerator.Core/obj
+
+/Source/SimpleDataGenerator.Tests.Core/bin
+
+/Source/SimpleDataGenerator.Tests.Core/obj

@@ -7,14 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDataGenerator.Core", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDataGenerator.Tests.Core", "SimpleDataGenerator.Tests.Core\SimpleDataGenerator.Tests.Core.csproj", "{69BF5A3A-BEBD-4F63-BDB1-70717AD38AE9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8DD1757B-4D1F-4438-BAA6-5A47DF3A8B4D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{626C0A54-2E63-428B-8E6B-9324DDC3AD2E}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{9FBF2746-F1BC-45F9-B286-55C04E06A657}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +31,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{B7BC9F04-81C2-41EA-A05C-8C10BB7B4979} = {9FBF2746-F1BC-45F9-B286-55C04E06A657}
-		{69BF5A3A-BEBD-4F63-BDB1-70717AD38AE9} = {9FBF2746-F1BC-45F9-B286-55C04E06A657}
 	EndGlobalSection
 EndGlobal
