@@ -25,3 +25,5 @@
 /Source/SimpleDataGenerator.Tests.Core/bin
 
 /Source/SimpleDataGenerator.Tests.Core/obj
+/Source/packages
+/Source
