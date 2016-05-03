@@ -60,3 +60,4 @@ The library allows define:
 
 ~~~
 
+SimpleAutoDataGenerator contains Fixture from  AutoFixture library, thus provides the full functionality of the library.
