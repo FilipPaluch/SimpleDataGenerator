@@ -10,3 +10,8 @@
 /Source/SimpleDataGenerator.Tests.Core/obj
 
 /Source/*.suo
+
+/Source/*.suo
+/Source/SimpleDataGenerator.v12.suo
+/Cake/tools
+/Cake/TestResult.xml
