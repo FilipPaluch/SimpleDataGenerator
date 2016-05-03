@@ -17,8 +17,6 @@ The library allows define:
 
 ## Example
 
-
-
 ~~~
     public class Vehicle
     {
@@ -35,23 +33,30 @@ The library allows define:
 
  public void Demo()
  {
-     var conf = new EntityConfiguration<Vehicle>();
+    // Configuration for vehicle object
+    var conf = new EntityConfiguration<Vehicle>();
 
-     conf.For(v => v.Name).WithConstValue("TestName");
-     conf.For(v => v.Kilometers).InRange(10, 20000);
-     conf.For(v => v.IsActive).WithConstValue(true);
-     conf.For(v => v.Description).WithLengthRange(1, 255);
-     conf.For(v => v.CreatedOn).InRange(new DateTime(2015, 01, 01), new DateTime(2016, 01, 01));
-     conf.For(v => v.Comments).IsEmpty();
+    // Properties configuration
+    
+    conf.For(v => v.Name).WithConstValue("TestName");
+    conf.For(v => v.Kilometers).InRange(10, 20000);
+    conf.For(v => v.IsActive).WithConstValue(true);
+    conf.For(v => v.Description).WithLengthRange(1, 255);
+    conf.For(v => v.CreatedOn).InRange(new DateTime(2015, 01, 01), new DateTime(2016, 01, 01));
+    conf.For(v => v.Comments).IsEmpty();
 
-     var generator = new SimpleAutoDataGenerator();
+    // Generator
+    
+    var generator = new SimpleAutoDataGenerator();
 
-     generator.WithConfiguration(conf);
+    // Applying configuration
+    
+    generator.WithConfiguration(conf);
 
-     var result = generator.Fixture.Create<VehicleEntity>();
+    // Generate vehicle object 
+    var result = generator.Fixture.Create<Vehicle>();
 
  }
 
 ~~~
-
 
