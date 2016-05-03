@@ -30,7 +30,7 @@ namespace SimpleDataGenerator.Tests.Core.Generator
             sut.WithConfiguration(vehicleMapping);
 
             //ACT
-            var result = sut.Create<VehicleEntity>();
+            var result = sut.Fixture.Create<VehicleEntity>();
 
             //ASSERT
             Assert.That(result.Name.Length, Is.EqualTo(10));
@@ -56,7 +56,7 @@ namespace SimpleDataGenerator.Tests.Core.Generator
             sut.WithConfiguration(vehicleMapping);
 
             //ACT
-            var result = sut.Create<VehicleEntity>();
+            var result = sut.Fixture.Create<VehicleEntity>();
 
             //ASSERT
             Assert.That(result.Name, Is.EqualTo(null));
@@ -84,7 +84,7 @@ namespace SimpleDataGenerator.Tests.Core.Generator
             sut.WithConfiguration(vehicleMapping);
 
             //ACT
-            var result = sut.Create<VehicleEntity>();
+            var result = sut.Fixture.Create<VehicleEntity>();
 
             //ASSERT
             Assert.LessOrEqual(result.IntKilometers, 20000);
@@ -116,7 +116,7 @@ namespace SimpleDataGenerator.Tests.Core.Generator
             sut.WithConfiguration(userMapping);
 
             //ACT
-            var result = sut.Create<UserEntity>();
+            var result = sut.Fixture.Create<UserEntity>();
 
             //ASSERT
             Assert.IsTrue(Regex.IsMatch(result.Email,
@@ -142,7 +142,7 @@ namespace SimpleDataGenerator.Tests.Core.Generator
             sut.WithConfiguration(vehicleMapping);
 
             //ACT
-            var result = sut.Create<VehicleEntity>();
+            var result = sut.Fixture.Create<VehicleEntity>();
 
             //ASSERT
             Assert.That(result.Name, Is.EqualTo("TestName"));

@@ -10,8 +10,14 @@ using SimpleDataGenerator.Core.Mapping.Interfaces;
 
 namespace SimpleDataGenerator.Core
 {
-    public class SimpleAutoDataGenerator : Fixture
+    public class SimpleAutoDataGenerator
     {
+        private readonly Fixture _fixture;
+        public SimpleAutoDataGenerator()
+        {
+            _fixture = new Fixture();
+        }
+
         public void WithConfiguration(IEnumerable<EntityConfiguration> entityConfigurations)
         {
             var customSpecimens = entityConfigurations.SelectMany(x => x.GetCustomSpecimens());
@@ -24,11 +30,16 @@ namespace SimpleDataGenerator.Core
             CustomizeFixture(customSpecimens);
         }
 
+        public Fixture Fixture
+        {
+            get { return _fixture; }
+        }
+
         private void CustomizeFixture(IEnumerable<ISpecimenBuilder> customSpecimens)
         {
             foreach (var customSpecimen in customSpecimens)
             {
-                Customizations.Add(customSpecimen);
+                _fixture.Customizations.Add(customSpecimen);
             }
         }
 

@@ -20,7 +20,7 @@ Task("Build")
 {
     MSBuild("../Source/SimpleDataGenerator.sln", settings => settings.SetConfiguration("Release"));
 });
-
+11
 Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
@@ -37,5 +37,6 @@ Task("Default")
 {
     Information("SimpleDataGenerator building finished.");
 });
+
 
 RunTarget(target);
