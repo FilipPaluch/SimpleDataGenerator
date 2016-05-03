@@ -10,8 +10,8 @@ SimpleDataGenerator is AutoFixture library extension, makes it easier to define 
 The library allows define:
   - the range of the generated values for the numeric properties
   - the constant value
-  - the length for [string] type property 
-  - the range of lengths for [string] type property 
+  - the length for `string` type property 
+  - the range of lengths for `string` type property 
   - which properties should be empty
   - which properties should be generated as email
 
