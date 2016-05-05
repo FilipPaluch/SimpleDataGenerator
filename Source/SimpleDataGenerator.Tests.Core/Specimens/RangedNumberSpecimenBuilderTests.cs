@@ -63,6 +63,30 @@ namespace SimpleDataGenerator.Tests.Core.Specimens
             Assert.GreaterOrEqual(result, minimum);
         }
 
+        [TestCase(0, 1)]
+        [TestCase(0, 100)]
+        [TestCase(100, 100000)]
+        [TestCase(-10, 10)]
+        [TestCase(-20, -10)]
+        public void Should_Generate_Number_From_Range_For_Nullable_Int_Values(int minimum, int maximum)
+        {
+            //ARRANGE
+
+            var fixture = new SpecimenBuilderFixture();
+
+            var chosenProperty = fixture.GetProperty<VehicleEntity>(x => x.NullableIntKilometers);
+
+            var sut = new RangedNumberSpecimenBuilder(chosenProperty, new NumberRange(minimum, maximum));
+
+            //ACT
+
+            var result = (int)sut.Create(chosenProperty, new SpecimenContext(new Fixture()));
+
+            //ASSERT
+            Assert.LessOrEqual(result, maximum);
+            Assert.GreaterOrEqual(result, minimum);
+        }
+
         [TestCase(0.00f, 1.00f)]
         [TestCase(0.34f, 100.00f)]
         [TestCase(100.10f, 100000.98f)]
@@ -75,6 +99,31 @@ namespace SimpleDataGenerator.Tests.Core.Specimens
             var fixture = new SpecimenBuilderFixture();
 
             var chosenProperty = fixture.GetProperty<VehicleEntity>(x => x.FloatKilometers);
+
+            var sut = new RangedNumberSpecimenBuilder(chosenProperty, new NumberRange(minimum, maximum));
+
+            //ACT
+
+            var result = (float)sut.Create(chosenProperty, new SpecimenContext(new Fixture()));
+
+            //ASSERT
+            Assert.LessOrEqual(result, maximum);
+            Assert.GreaterOrEqual(result, minimum);
+        }
+
+
+        [TestCase(0.00f, 1.00f)]
+        [TestCase(0.34f, 100.00f)]
+        [TestCase(100.10f, 100000.98f)]
+        [TestCase(-10.01f, 10.47f)]
+        [TestCase(-20.99f, -10.00f)]
+        public void Should_Generate_Number_From_Range_For_Nullable_Float_Values(float minimum, float maximum)
+        {
+            //ARRANGE
+
+            var fixture = new SpecimenBuilderFixture();
+
+            var chosenProperty = fixture.GetProperty<VehicleEntity>(x => x.NullableFloatKilometers);
 
             var sut = new RangedNumberSpecimenBuilder(chosenProperty, new NumberRange(minimum, maximum));
 
@@ -110,6 +159,31 @@ namespace SimpleDataGenerator.Tests.Core.Specimens
             Assert.LessOrEqual(result, maximum);
             Assert.GreaterOrEqual(result, minimum);
         }
+
+        [TestCase(0.00, 1.00)]
+        [TestCase(0.34, 100.00)]
+        [TestCase(100.10, 100000.98)]
+        [TestCase(-10.01, 10.47)]
+        [TestCase(-20.99, -10.00)]
+        public void Should_Generate_Number_From_Range_For_Nullable_Double_Values(double minimum, double maximum)
+        {
+            //ARRANGE
+
+            var fixture = new SpecimenBuilderFixture();
+
+            var chosenProperty = fixture.GetProperty<VehicleEntity>(x => x.NullableDoubleKilometers);
+
+            var sut = new RangedNumberSpecimenBuilder(chosenProperty, new NumberRange(minimum, maximum));
+
+            //ACT
+
+            var result = (double)sut.Create(chosenProperty, new SpecimenContext(new Fixture()));
+
+            //ASSERT
+            Assert.LessOrEqual(result, maximum);
+            Assert.GreaterOrEqual(result, minimum);
+        }
+
         [TestCase(1, 1)]
         [TestCase(2, 1)]
         public void Should_Throw_Exception_When_Minimum_Value_Is_Greater_Or_Equal_Than_Maximum_For_Int_Values(int minimum, int maximum)

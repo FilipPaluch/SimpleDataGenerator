@@ -104,6 +104,38 @@ namespace SimpleDataGenerator.Tests.Core.Generator
         }
 
         [Test]
+        public void Should_Generate_Property_From_Range_For_Nullable_Properties()
+        {
+            //ARRANGE
+
+            var vehicleMapping = new EntityConfiguration<VehicleEntity>();
+            vehicleMapping.For(x => x.NullableIntKilometers).InRange(1, 20000);
+            vehicleMapping.For(x => x.NullableFloatKilometers).InRange(100.9f, 20000.1f);
+            vehicleMapping.For(x => x.NullableDoubleKilometers).InRange(200.3, 20000.8);
+            vehicleMapping.For(x => x.NullableCreatedOn).InRange(new DateTime(2016, 01, 01), new DateTime(2016, 02, 01));
+
+            var sut = new SimpleAutoDataGenerator();
+
+            sut.WithConfiguration(vehicleMapping);
+
+            //ACT
+            var result = sut.Fixture.Create<VehicleEntity>();
+
+            //ASSERT
+            Assert.LessOrEqual(result.NullableIntKilometers, 20000);
+            Assert.GreaterOrEqual(result.NullableIntKilometers, 1);
+
+            Assert.LessOrEqual(result.NullableFloatKilometers, 20000.1f);
+            Assert.GreaterOrEqual(result.NullableFloatKilometers, 100.9f);
+
+            Assert.LessOrEqual(result.NullableDoubleKilometers, 20000.8);
+            Assert.GreaterOrEqual(result.NullableDoubleKilometers, 200.3);
+
+            Assert.LessOrEqual(result.NullableCreatedOn, new DateTime(2016, 02, 01));
+            Assert.GreaterOrEqual(result.NullableCreatedOn, new DateTime(2016, 01, 01));
+        }
+
+        [Test]
         public void Should_Generate_Email_Property()
         {
             //ARRANGE

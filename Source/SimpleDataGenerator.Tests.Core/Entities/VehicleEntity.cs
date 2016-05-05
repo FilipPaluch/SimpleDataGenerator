@@ -20,6 +20,14 @@ namespace SimpleDataGenerator.Tests.Core.Entities
         
         public double DoubleKilometers { get; set; }
 
+        public int? NullableIntKilometers { get; set; }
+
+        public float? NullableFloatKilometers { get; set; }
+
+        public double? NullableDoubleKilometers { get; set; }
+
+        public DateTime? NullableCreatedOn { get; set; }
+
         public string Name { get; set; }
 
         public UserEntity User { get; set; }

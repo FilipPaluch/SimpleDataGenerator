@@ -23,7 +23,10 @@ namespace SimpleDataGenerator.Core.Customization.Specimens
         {
             if (IsSelectedProperty(request))
             {
-                var value = context.Resolve(new RangedNumberRequest(_selectedProperty.PropertyType, _numberRange.Minimum, _numberRange.Maximum));
+                var propertyType = _selectedProperty.PropertyType;
+                var underlyingType = Nullable.GetUnderlyingType(propertyType);
+                var expectedType = underlyingType ?? propertyType;
+                var value = context.Resolve(new RangedNumberRequest(expectedType, _numberRange.Minimum, _numberRange.Maximum));
                 return value;
             }
 

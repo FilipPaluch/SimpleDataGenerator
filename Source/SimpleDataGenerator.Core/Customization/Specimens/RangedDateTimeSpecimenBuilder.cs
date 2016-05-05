@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.Kernel;
 using SimpleDataGenerator.Core.Model;
 
@@ -27,6 +28,7 @@ namespace SimpleDataGenerator.Core.Customization.Specimens
             {
                 return GenerateRandomDateFromRange(_dateTimeRange);
             }
+            
 
             return new NoSpecimen();
         }
