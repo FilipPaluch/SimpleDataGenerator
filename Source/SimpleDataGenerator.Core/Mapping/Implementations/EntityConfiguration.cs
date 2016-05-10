@@ -17,9 +17,9 @@ namespace SimpleDataGenerator.Core.Mapping.Implementations
 
         private readonly List<IPropertyConfiguration> _configurations;
 
-        public EntityConfiguration()
+        public EntityConfiguration(Type entityType)
         {
-            
+            EntityType = entityType;
             _configurations = new List<IPropertyConfiguration>();
         }
 
@@ -31,13 +31,20 @@ namespace SimpleDataGenerator.Core.Mapping.Implementations
         public IEnumerable<ISpecimenBuilder> GetCustomSpecimens()
         {
             return _configurations.Select(x => x.CustomSpecimen);
-        } 
+        }
+
+        public Type EntityType { get; private set; }
     }
 
     public class EntityConfiguration<TEntity> : EntityConfiguration
         where TEntity : class
     {
 
+        public EntityConfiguration()
+            : base(typeof(TEntity))
+        {
+
+        }
 
         #region NumericProperty
 
